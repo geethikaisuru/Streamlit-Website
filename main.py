@@ -15,21 +15,24 @@ with col2:
 
 st.write("Below are some of the projects I have worked on.")
 
-col3, col4 = st.columns(2)
+col3, emp_col, col4 = st.columns([1.5,0.5,1.5])
 
 df = pd.read_csv("data.csv", sep=";")
 with col3:
     for index, row in df[:10].iterrows():
-        st.write(row["title"])
-        #st.image(row["image"])
+        st.header(row["title"])
+        st.image("images/" + row["image"])
         st.write(row["description"])
+        st.write(f"[Source Code]({row['url']})")
 
 with col4:
     for index, row in df[10:].iterrows():
-        st.write(row["title"])
-        #st.image(row["image"])
+        st.header(row["title"])
+        st.image("images/" + row["image"])
         st.write(row["description"])
-        
+        st.write(f"[Source Code]({row['url']})")
+
+
 def main():
     pass
 
