@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pandas as pd
 
 st.set_page_config(page_title="Geethika Isuru", page_icon="🧊", layout="wide", initial_sidebar_state="auto")
 col1, col2 = st.columns(2)
@@ -12,8 +12,24 @@ with col2:
     I am an entrepreneur & a software engineer with a passion for data science and machine learning. I have experience in developing web applications, data analysis, and machine learning models. I am currently working as a software engineer at a software company in Sri Lanka. I have a bachelor's degree in ICT from the University of Sri Jayewardenepura. I am also a self-taught data scientist and machine learning engineer. I have completed several online courses in data science and machine learning. I am always eager to learn new technologies and improve my skills. I am looking for opportunities to work on challenging projects in data science and machine learning.
                 """
     st.write(content)
-    
 
+st.write("Below are some of the projects I have worked on.")
+
+col3, col4 = st.columns(2)
+
+df = pd.read_csv("data.csv", sep=";")
+with col3:
+    for index, row in df[:10].iterrows():
+        st.write(row["title"])
+        #st.image(row["image"])
+        st.write(row["description"])
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.write(row["title"])
+        #st.image(row["image"])
+        st.write(row["description"])
+        
 def main():
     pass
 
