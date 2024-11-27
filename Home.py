@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="Geethika Isuru", page_icon="🧊", layout="wide", initial_sidebar_state="auto")
+st.set_page_config(page_title="Geethika Isuru 🧙‍♂️", page_icon="🧊", layout="wide", initial_sidebar_state="auto")
 col1, col2 = st.columns(2)
 
 with col1:
